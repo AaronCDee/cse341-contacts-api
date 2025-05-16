@@ -29,9 +29,11 @@ export async function show(req, res) {
  * @returns {string} the new contact id
  */
 export async function create(req, res) {
-  const contact = req.body;
+  const { firstName, lastName, birthday, favoriteColor, email } = req.body;
 
-  const { isValid, errors } = validateNewContact(contact);
+  const createAttrs = { firstName, lastName, birthday, favoriteColor, email };
+
+  const { isValid, errors } = validateNewContact(createAttrs);
 
   if (!isValid) {
     res.status(422).send({ error: errors });
@@ -40,7 +42,7 @@ export async function create(req, res) {
   }
 
   try {
-    const result = await contactsCollection().insertOne(contact);
+    const result = await contactsCollection().insertOne(createAttrs);
 
     res.status(200).send({ _id: result.insertedId });
   } catch(e) {
