@@ -5,6 +5,7 @@ import './loadEnv.mjs';
 
 import homeRoutes     from './routes/home.mjs';
 import contactsRoutes from './routes/contacts.mjs';
+import swaggerRoutes  from './routes/swagger.js';
 
 // Web server
 const PORT = process.env.PORT || 8080;
@@ -14,8 +15,9 @@ app.use(cors());
 app.use(express.json());
 
 // BaseRoutes
-app.use('/', homeRoutes);
+app.use('/api-docs', swaggerRoutes);
 app.use('/contacts', contactsRoutes);
+app.use('/', homeRoutes);
 
 
 // Global error handling
