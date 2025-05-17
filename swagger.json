@@ -5,9 +5,10 @@
     "description": "Manage contacts database",
     "version": "1.0.0"
   },
+  "host": "aaroncdee-cse341-contacts-api.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/api-docs/": {
