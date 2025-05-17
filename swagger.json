@@ -6,24 +6,14 @@
     "version": "1.0.0"
   },
   "host": "aaroncdee-cse341-contacts-api.onrender.com",
-  "basePath": "/",
+  "basePath": "/contacts",
   "schemes": [
     "https"
   ],
   "paths": {
-    "/api-docs/": {
+    "/": {
       "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/contacts/": {
-      "get": {
-        "description": "",
+        "description": "Endpoint to list all contacts.",
         "responses": {
           "200": {
             "description": "OK"
@@ -31,7 +21,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Endpoint to create a contact.",
         "parameters": [
           {
             "name": "body",
@@ -68,9 +58,9 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/{id}": {
       "get": {
-        "description": "",
+        "description": "Endpoint to fetch a contact by ID.",
         "parameters": [
           {
             "name": "id",
@@ -89,7 +79,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Endpoint to update a contact.",
         "parameters": [
           {
             "name": "id",
@@ -132,7 +122,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Endpoint to delete a contact.",
         "parameters": [
           {
             "name": "id",
@@ -147,16 +137,6 @@
           },
           "400": {
             "description": "Bad Request"
-          }
-        }
-      }
-    },
-    "/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }

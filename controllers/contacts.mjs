@@ -5,12 +5,14 @@ import db from "../db/conn.mjs";
 const contactsCollection = () => db.collection("contacts");
 
 export async function index(_req, res) {
+  /* #swagger.description = 'Endpoint to list all contacts.' */
   let results = await contactsCollection().find({}).toArray();
 
   res.status(200).send(results);
 }
 
 export async function show(req, res) {
+  /* #swagger.description = 'Endpoint to fetch a contact by ID.' */
   const query  = {_id: new ObjectId(req.params.id)};
   const result = await contactsCollection().findOne(query);
 
@@ -29,6 +31,7 @@ export async function show(req, res) {
  * @returns {string} the new contact id
  */
 export async function create(req, res) {
+  /* #swagger.description = 'Endpoint to create a contact.' */
   const { firstName, lastName, birthday, favoriteColor, email } = req.body;
 
   const createAttrs = { firstName, lastName, birthday, favoriteColor, email };
@@ -51,6 +54,7 @@ export async function create(req, res) {
 }
 
 export async function update(req, res) {
+  /* #swagger.description = 'Endpoint to update a contact.' */
   const filter = { _id: new ObjectId(req.params.id) };
 
   const { firstName, lastName, birthday, favoriteColor, email } = req.body;
@@ -74,6 +78,7 @@ export async function update(req, res) {
 }
 
 export async function destroy(req, res) {
+  /* #swagger.description = 'Endpoint to delete a contact.' */
   const filter = { _id: new ObjectId(req.params.id) };
 
   try {
