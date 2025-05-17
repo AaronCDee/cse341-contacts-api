@@ -5,7 +5,6 @@ const doc = {
     title: 'Contacts API',
     description: 'Manage contacts database'
   },
-  host: 'localhost:8080'
 };
 
 const outputFile = './swagger.json';
