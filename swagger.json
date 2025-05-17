@@ -6,22 +6,12 @@
     "version": "1.0.0"
   },
   "host": "aaroncdee-cse341-contacts-api.onrender.com",
-  "basePath": "/",
+  "basePath": "/contacts",
   "schemes": [
     "https"
   ],
   "paths": {
-    "/api-docs/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/contacts/": {
+    "/": {
       "get": {
         "description": "",
         "responses": {
@@ -68,7 +58,7 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -147,16 +137,6 @@
           },
           "400": {
             "description": "Bad Request"
-          }
-        }
-      }
-    },
-    "/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
